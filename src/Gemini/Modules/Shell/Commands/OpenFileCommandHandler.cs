@@ -25,6 +25,20 @@ namespace Gemini.Modules.Shell.Commands
         {
             var dialog = new OpenFileDialog();
 
+            var filters = IoC.GetAllInstances(typeof (IEditorProvider))
+                .Cast<IEditorProvider>()
+                .Where(p => p.OpenAllowed)
+                .SelectMany(p => p.FileTypes);
+
+            string filter = "All files|*.*";
+
+            foreach (var editorFileType in filters)
+            {
+                filter += string.Format("|{0}|*{1}", editorFileType.Name, editorFileType.FileExtension);
+            }
+
+            dialog.Filter = filter;
+
             if (dialog.ShowDialog() == true)
                 _shell.OpenDocument(GetEditor(dialog.FileName));
 
@@ -35,6 +49,7 @@ namespace Gemini.Modules.Shell.Commands
         {
             return IoC.GetAllInstances(typeof(IEditorProvider))
                 .Cast<IEditorProvider>()
+                .Where(p => p.OpenAllowed)
                 .Where(provider => provider.Handles(path))
                 .Select(provider => provider.Open(path))
                 .FirstOrDefault();

@@ -8,7 +8,7 @@ using Gemini.Framework.Services;
 
 namespace Gemini.Modules.UndoRedo.ViewModels
 {
-    [Export(typeof(IHistoryTool))]
+    //[Export(typeof(IHistoryTool))]
     public class HistoryViewModel : Tool, IHistoryTool
     {
         private readonly BindableCollection<HistoryItemViewModel> _historyItems;

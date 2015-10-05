@@ -2,7 +2,7 @@
 
 namespace Gemini.Modules.UndoRedo.Commands
 {
-    [CommandDefinition]
+    //[CommandDefinition]
     public class ViewHistoryCommandDefinition : CommandDefinition
     {
         public const string CommandName = "View.History";

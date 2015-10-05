@@ -1,8 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:c="clr-namespace:Gemini.Modules.ToolBars.Controls"
-                    xmlns:shaderEffects="clr-namespace:Gemini.Framework.ShaderEffects"
-                    xmlns:controls="clr-namespace:Gemini.Framework.Controls">
+                    xmlns:shaderEffects="clr-namespace:Gemini.Framework.ShaderEffects">
     <Style x:Key="ToolBarThumbStyle" TargetType="{x:Type Thumb}">
         <Setter Property="OverridesDefaultStyle" Value="true" />
         <Setter Property="Cursor" Value="SizeAll" />

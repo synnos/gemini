@@ -11,7 +11,7 @@ using Gemini.Modules.Toolbox.Services;
 
 namespace Gemini.Modules.Toolbox.ViewModels
 {
-    [Export(typeof(IToolbox))]
+    //[Export(typeof(IToolbox))]
     public class ToolboxViewModel : Tool, IToolbox
     {
         private readonly IToolboxService _toolboxService;

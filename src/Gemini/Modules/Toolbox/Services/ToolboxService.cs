@@ -7,7 +7,7 @@ using Gemini.Modules.Toolbox.Models;
 
 namespace Gemini.Modules.Toolbox.Services
 {
-    [Export(typeof(IToolboxService))]
+    //[Export(typeof(IToolboxService))]
     public class ToolboxService : IToolboxService
     {
         private readonly Dictionary<Type, IEnumerable<ToolboxItem>> _toolboxItems;

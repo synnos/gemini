@@ -28,6 +28,6 @@
         <behaviors:CustomGlowWindowBehavior />
     </i:Interaction.Behaviors>
     <Grid>
-		<ContentControl cal:View.Model="{Binding Shell}" />
-	</Grid>
+        <ContentControl cal:View.Model="{Binding Shell}" />
+    </Grid>
 </mahapps:MetroWindow>

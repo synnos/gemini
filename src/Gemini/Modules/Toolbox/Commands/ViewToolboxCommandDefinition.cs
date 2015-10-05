@@ -2,7 +2,7 @@
 
 namespace Gemini.Modules.Toolbox.Commands
 {
-    [CommandDefinition]
+    //[CommandDefinition]
     public class ViewToolboxCommandDefinition : CommandDefinition
     {
         public const string CommandName = "View.Toolbox";

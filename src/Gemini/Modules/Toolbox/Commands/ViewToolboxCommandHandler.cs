@@ -6,12 +6,12 @@ using Gemini.Framework.Threading;
 
 namespace Gemini.Modules.Toolbox.Commands
 {
-    [CommandHandler]
+    //[CommandHandler]
     public class ViewToolboxCommandHandler : CommandHandlerBase<ViewToolboxCommandDefinition>
     {
         private readonly IShell _shell;
 
-        [ImportingConstructor]
+        //[ImportingConstructor]
         public ViewToolboxCommandHandler(IShell shell)
         {
             _shell = shell;

@@ -4,7 +4,7 @@ using Gemini.Framework.Commands;
 
 namespace Gemini.Modules.UndoRedo.Commands
 {
-    [CommandDefinition]
+    //[CommandDefinition]
     public class UndoCommandDefinition : CommandDefinition
     {
         public const string CommandName = "Edit.Undo";

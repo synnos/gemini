@@ -8,43 +8,43 @@ using Gemini.Framework.ToolBars;
 
 namespace Gemini.Modules.ToolBars.Models
 {
-	public class CommandToolBarItem : ToolBarItemBase, ICommandUiItem
+    public class CommandToolBarItem : ToolBarItemBase, ICommandUiItem
     {
-	    private readonly ToolBarItemDefinition _toolBarItem;
-	    private readonly Command _command;
+        private readonly ToolBarItemDefinition _toolBarItem;
+        private readonly Command _command;
         private readonly IToolBar _parent;
 
-		public string Text
-		{
-			get { return _command.Text; }
-		}
+        public string Text
+        {
+            get { return _command.Text; }
+        }
 
         public ToolBarItemDisplay Display
         {
             get { return _toolBarItem.Display; }
         }
 
-	    public Uri IconSource
-	    {
-	        get { return _command.IconSource; }
-	    }
+        public Uri IconSource
+        {
+            get { return _command.IconSource; }
+        }
 
-	    public string ToolTip
-	    {
-	        get
-	        {
+        public string ToolTip
+        {
+            get
+            {
                 var inputGestureText = (_command.KeyGesture != null)
                     ? string.Format(" ({0})", _command.KeyGesture.GetDisplayStringForCulture(CultureInfo.CurrentUICulture))
                     : string.Empty;
 
                 return string.Format("{0}{1}", _command.ToolTip, inputGestureText).Trim();
-	        }
-	    }
+            }
+        }
 
-	    public bool HasToolTip
-	    {
+        public bool HasToolTip
+        {
             get { return !string.IsNullOrWhiteSpace(ToolTip); }
-	    }
+        }
 
         public ICommand Command
         {
@@ -56,14 +56,14 @@ namespace Gemini.Modules.ToolBars.Models
             get { return _command.Checked; }
         }
 
-		public CommandToolBarItem(ToolBarItemDefinition toolBarItem, Command command, IToolBar parent)
-		{
-		    _toolBarItem = toolBarItem;
-		    _command = command;
-		    _parent = parent;
+        public CommandToolBarItem(ToolBarItemDefinition toolBarItem, Command command, IToolBar parent)
+        {
+            _toolBarItem = toolBarItem;
+            _command = command;
+            _parent = parent;
 
             command.PropertyChanged += OnCommandPropertyChanged;
-		}
+        }
 
         private void OnCommandPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
@@ -74,14 +74,14 @@ namespace Gemini.Modules.ToolBars.Models
             NotifyOfPropertyChange(() => IsChecked);
         }
 
-	    CommandDefinitionBase ICommandUiItem.CommandDefinition
-	    {
-	        get { return _command.CommandDefinition; }
-	    }
+        CommandDefinitionBase ICommandUiItem.CommandDefinition
+        {
+            get { return _command.CommandDefinition; }
+        }
 
         void ICommandUiItem.Update(CommandHandlerWrapper commandHandler)
-	    {
-	        // TODO
-	    }
+        {
+            // TODO
+        }
     }
 }

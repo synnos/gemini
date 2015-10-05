@@ -8,5 +8,7 @@ namespace Gemini.Framework.Services
 		bool Handles(string path);
         IDocument CreateNew(string name);
 		IDocument Open(string path);
+        bool CreateNewAllowed { get; }
+        bool OpenAllowed { get; }
 	}
 }

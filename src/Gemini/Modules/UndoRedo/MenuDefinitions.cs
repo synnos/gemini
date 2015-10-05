@@ -6,15 +6,15 @@ namespace Gemini.Modules.UndoRedo
 {
     public static class MenuDefinitions
     {
-        [Export]
+        //[Export]
         public static MenuItemDefinition EditUndoMenuItem = new CommandMenuItemDefinition<UndoCommandDefinition>(
             MainMenu.MenuDefinitions.EditUndoRedoMenuGroup, 0);
 
-        [Export]
+        //[Export]
         public static MenuItemDefinition EditRedoMenuItem = new CommandMenuItemDefinition<RedoCommandDefinition>(
             MainMenu.MenuDefinitions.EditUndoRedoMenuGroup, 1);
 
-        [Export]
+        //[Export]
         public static MenuItemDefinition ViewHistoryMenuItem = new CommandMenuItemDefinition<ViewHistoryCommandDefinition>(
             MainMenu.MenuDefinitions.ViewToolsMenuGroup, 5);
     }
